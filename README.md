@@ -1,5 +1,5 @@
 # CRIANDO GRUPO DE RECURSOS NO AZURE
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Bongiorno14/Projeto_reconhecimento-_Rostos/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Bongiorno14/Criando_RecourseGroup_Azure/blob/main/LICENSE) 
 
 # OVERVIEW
 
