@@ -76,6 +76,60 @@ As VMs são criadas usando um software chamado hipervisor, que permite a criaç�
 ## Tags e Categorização:
 - Tags: Permitem categorizar e organizar as VMs em grupos lógicos, facilitando a gestão, identificação e rastreamento das instâncias dentro do ambiente Azure.
 
+# UPDATE II - ARMAZENAMENTO NO AZURE
+
+Primeiro ponto importante, a escolha da redundância.
+PS: Durante o processo de criaçao, o nome deste é como um CPF, único e intransferível.
+
+## LRS (Locally Redundant Storage):
+- O LRS replica seus dados dentro de uma região do Azure para proteção contra falhas de hardware ou interrupções de serviço localizadas. Por exemplo, se você armazenar dados em um contêiner de blobs com redundância LRS em uma região específica, o Azure replicará esses dados três vezes dentro dessa região.
+- Exemplo de utilização: Armazenamento de backups de máquinas virtuais para recuperação de desastres dentro da mesma região.
+
+## ZRS (Zone Redundant Storage):
+- O ZRS replica seus dados em zonas de disponibilidade diferentes dentro de uma região do Azure, oferecendo proteção adicional contra falhas de zona devido a desastres naturais ou interrupções em uma zona específica. Por exemplo, ao usar ZRS para armazenar dados, o Azure replica esses dados em três zonas de disponibilidade diferentes dentro da mesma região.
+- Exemplo de utilização: Armazenamento de dados críticos para aplicativos de alta disponibilidade que exigem resiliência em várias zonas de disponibilidade.
+
+## GRS (Geo-Redundant Storage):
+- O GRS replica seus dados de forma síncrona em uma região primária e de forma assíncrona em uma região secundária distante para proteção contra desastres regionais. Por exemplo, se você usar GRS para armazenamento, o Azure replicará seus dados em LRS na região primária e em outra região geograficamente distante para failover em caso de desastres.
+- Exemplo de utilização: Armazenamento de dados críticos que exigem recuperação rápida em uma região secundária em caso de falha na região primária.
+
+## GZRS (Geo-Zone Redundant Storage):
+- O GZRS é uma combinação do ZRS e GRS, oferecendo redundância em zonas de disponibilidade e também em regiões geograficamente distantes. Ele replica seus dados de forma síncrona em zonas de disponibilidade dentro da região e de forma assíncrona em uma região secundária distante.
+- Exemplo de utilização: Armazenamento de dados críticos para aplicativos altamente resilientes que exigem redundância em várias zonas de disponibilidade e em regiões diferentes para proteção contra desastres regionais.
+
+## TIPOS DE ARMAZENAMENTO
+### Azure Blob Storage
+- O Azure Blob Storage é um serviço de armazenamento de objetos escalável e durável, projetado para armazenar grandes quantidades de dados não estruturados, como imagens, vídeos, arquivos de backup e logs. Ele oferece redundância para alta disponibilidade dos dados, incluindo:
+- Redundância localmente redundante (LRS): Os dados são replicados dentro de uma região do Azure, garantindo alta disponibilidade dentro dessa região.
+- Redundância georreplicada (GRS): Além da replicação dentro da região, os dados também são replicados de forma síncrona para uma região secundária distante para proteção contra desastres naturais ou falhas em larga escala.
+
+### Azure Disk Storage
+- O Azure Disk Storage fornece discos persistentes que podem ser anexados a máquinas virtuais (VMs) no Azure. Ele oferece três tipos de discos:
+- Discos gerenciados padrão: São discos HDD (Hard Disk Drive) tradicionais para cargas de trabalho com baixo custo e baixo desempenho.
+- Discos gerenciados Premium SSD: Oferecem alto desempenho e baixa latência, ideais para aplicativos que exigem I/O intensivo.
+- Discos gerenciados Ultra Disk: São discos de armazenamento de alto desempenho e baixa latência, otimizados para cargas de trabalho de missão crítica.
+
+### Azure Queue Storage
+- O Azure Queue Storage é um serviço de fila de mensagens que permite a comunicação assíncrona entre componentes de aplicativos distribuídos. Ele oferece:
+- Filas padrão: Garante a entrega de mensagens pelo menos uma vez e suporta um modelo de entrega de mensagens FIFO (First-In-First-Out).
+- Filas de mensagens prioritárias: Oferece suporte a priorização de mensagens para aplicativos que exigem entrega rápida de mensagens críticas.
+
+### Azure File Storage
+- O Azure File Storage é um serviço de armazenamento de arquivos totalmente gerenciado, que permite compartilhar arquivos entre várias instâncias de VMs e sistemas operacionais. Ele oferece:
+- Camada Hot: Ideal para arquivos frequentemente acessados e que exigem baixa latência.
+- Camada Cool: Mais econômica, adequada para arquivos de backup e arquivamento que não são acessados com frequência.
+
+### Azure Table Storage
+- O Azure Table Storage é um serviço de armazenamento NoSQL altamente escalável, adequado para armazenar dados estruturados e semi-estruturados, como dados de aplicativos da Web e IoT. Ele oferece:
+- Particionamento e dimensionamento automático: Permite escalonamento horizontal dos dados para lidar com cargas de trabalho em constante crescimento.
+- Suporte a grandes volumes de dados: Capaz de armazenar petabytes de dados de maneira eficiente e econômica.
+
+## Camadas de Acesso
+O Azure oferece camadas de acesso para otimizar o desempenho e reduzir custos:
+- Camada de acesso quente (Hot access tier): Ideal para dados frequentemente acessados, com custo mais alto de armazenamento, mas menor custo de acesso.
+- Camada de acesso frio (Cool access tier): Mais econômica para dados raramente acessados, com custo mais baixo de armazenamento, mas custo mais alto de acesso.
+- Camada de arquivo de arquivo (Archive access tier): Destinada a dados de arquivo inativos, com custo de armazenamento extremamente baixo, mas custo alto de acesso e recuperação.
+
 # Aprendizado
 
 - Tive a oportunidade de explorar a criaçao destas ferramentas, e um ponto importante.. A atençao aos detalhes é primordial para a escolha das opçoes em cada ferramenta.
@@ -85,3 +139,9 @@ As VMs são criadas usando um software chamado hipervisor, que permite a criaç�
 
 - Com o aprofundamento do aprendizado nas VMs, pude verificar a quantidade de personalizaçao que existe apenas neste serviço.
 - AS configuraçoes atendem a necessidades muito especificas conforme cada projeto.
+
+## Update II
+
+- Muitos detalhes podem ser configurados e ajustados conforme a necessiade durante todo o processo de criaçao e gerenciamento dos armazenamento
+- Potencial para explorar ferramentas de migraçao de Dados.
+  
