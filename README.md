@@ -130,6 +130,92 @@ O Azure oferece camadas de acesso para otimizar o desempenho e reduzir custos:
 - Camada de acesso frio (Cool access tier): Mais econômica para dados raramente acessados, com custo mais baixo de armazenamento, mas custo mais alto de acesso.
 - Camada de arquivo de arquivo (Archive access tier): Destinada a dados de arquivo inativos, com custo de armazenamento extremamente baixo, mas custo alto de acesso e recuperação.
 
+# UPDATE III - SEGURANÇA E IDENTIDADE NO AZURE
+
+Um pequeno overview de alguns serviços referentes a questoes de segurança, abordando também alguns detalhes do Microsoft Entra Conect e Microsoft Defender for Cloud.
+
+## Recursos de Segurança e Identidade no Azure:
+
+### Azure Active Directory (Azure AD):
+- Centraliza o gerenciamento de identidades e acesso para usuários, grupos e aplicativos.
+- Oferece autenticação multifatorial (MFA) para camadas adicionais de segurança.
+- Integra-se com serviços do Azure e aplicativos de terceiros.
+
+### Azure Security Center:
+- Fornece visibilidade e controle sobre o ambiente de nuvem, identificando ameaças potenciais.
+- Oferece recomendações de segurança baseadas em práticas recomendadas.
+- Permite a configuração de políticas de segurança e detecção de anomalias.
+
+### Azure Sentinel:
+- Plataforma de gerenciamento de informações e eventos de segurança (SIEM).
+- Oferece detecção avançada de ameaças e análise de segurança.
+- Integra dados de vários serviços e fontes para correlacionar informações e identificar padrões suspeitos.
+
+### Azure Firewall:
+- Fornece uma camada adicional de segurança para proteger redes virtuais no Azure.
+- Controla o tráfego de entrada e saída com base em regras de segurança.
+- Suporta integração com serviços de segurança de terceiros.
+
+### Azure Information Protection:
+- Ajuda a proteger dados confidenciais aplicando políticas de classificação e rotulagem.
+- Oferece criptografia e controle de acesso com base nas políticas definidas.
+
+### Azure Key Vault:
+- Gerencia e protege chaves de criptografia, segredos e certificados.
+- Oferece controle de acesso granular e auditoria para chaves e segredos.
+
+## Microsoft Defender for Cloud:
+
+### Proteção de Workloads:
+- Monitora e protege máquinas virtuais, contêineres e serviços como Azure Kubernetes Service (AKS) contra ameaças.
+- Oferece detecção de ameaças em tempo real e respostas automatizadas.
+
+### Proteção de Aplicativos:
+- Analisa o código e o comportamento das aplicações em busca de vulnerabilidades e ameaças.
+- Integra-se ao pipeline de desenvolvimento para segurança contínua.
+
+### Proteção de Identidades:
+- Detecta e responde a atividades suspeitas relacionadas a identidades de usuário.
+- Oferece insights para fortalecer a postura de segurança das identidades.
+
+### Proteção de Dados:
+- Monitora e protege dados confidenciais em ambientes Azure e híbridos.
+- Aplica políticas de prevenção contra perda de dados (DLP) e criptografia.
+
+## Microsoft Entra Connect
+
+### Gerenciamento de Identidade:
+- Centraliza o gerenciamento de identidades e acesso para usuários, grupos e aplicativos em um diretório baseado na nuvem.
+- Permite a criação, edição e exclusão de contas de usuário, além de definir políticas de senha e autenticação.
+
+### Autenticação e Autorização:
+- Oferece autenticação multifatorial (MFA) para uma camada adicional de segurança.
+- Suporta diferentes métodos de autenticação, como senha, autenticação baseada em certificados, autenticação biométrica e muito mais.
+- Permite o gerenciamento de permissões e acesso com base em funções (RBAC) para recursos e aplicativos.
+
+### Sincronização de Diretórios:
+- Oferece opções de sincronização entre o Azure AD e diretórios locais, como Active Directory local, para manter consistência nas identidades e políticas.
+- Suporta o Azure AD Connect para integração e sincronização de identidades entre ambientes locais e na nuvem.
+
+### Gerenciamento de Aplicativos:
+- Facilita o acesso seguro a aplicativos em nuvem e locais usando o Azure AD como provedor de identidade.
+- Oferece integração com milhares de aplicativos SaaS (Software as a Service) por meio da Galeria de Aplicativos do Azure AD.
+- Permite o gerenciamento de acesso condicional com base em políticas de segurança.
+
+### Proteção de Identidade:
+- Detecta e responde a atividades suspeitas e ameaças de segurança relacionadas a identidades de usuário.
+- Fornece insights sobre a postura de segurança das identidades e recomendações para melhorias.
+
+### Integração com Outros Serviços Microsoft:
+- Integra-se nativamente com outros serviços Microsoft, como Microsoft 365, Azure Information Protection, Microsoft Defender for Identity, entre outros, para oferecer uma segurança abrangente.
+
+### Relatórios e Auditoria:
+- Oferece relatórios e análises detalhadas sobre atividades de usuários, autenticações, aplicativos acessados e muito mais para fins de auditoria e conformidade.
+- Suporta integração com ferramentas de gerenciamento de segurança e SIEM (Security Information and Event Management).
+
+### Segurança Avançada:
+- Oferece recursos avançados de segurança, como detecção de ameaças avançadas, prevenção contra perda de dados (DLP) e proteção contra acessos não autorizados.
+
 # Aprendizado
 
 - Tive a oportunidade de explorar a criaçao destas ferramentas, e um ponto importante.. A atençao aos detalhes é primordial para a escolha das opçoes em cada ferramenta.
@@ -144,4 +230,7 @@ O Azure oferece camadas de acesso para otimizar o desempenho e reduzir custos:
 
 - Muitos detalhes podem ser configurados e ajustados conforme a necessiade durante todo o processo de criaçao e gerenciamento dos armazenamento
 - Potencial para explorar ferramentas de migraçao de Dados.
+
+## Update III
+- Questoes de segunraça tem um abordagem muito crítica, tendo inumero serviços para cada situaçao específica.
   
